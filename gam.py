@@ -94,8 +94,9 @@ def pepe_dame():
 
         elif counter1 >= 3:
             if board[n] == "X":
-                
-                r = choice("\nWhere do you want to move it to? ")
+
+                if  n == 0:
+                    r = choice("\nWhere do you want to move it to? ")
 ##                player1(s)
 ##                global counter1
 ##                counter1 = counter1 - 1
@@ -105,8 +106,8 @@ def pepe_dame():
 ##Check if move is allowed
 ##                for i in range(0,4):
 ##                    for j in range(0,n):
-                if r == 2 or r == 4 or r == 5: 
-                    if n == 0:
+                  
+                    if r == 1 or r == 3 or r == 4:
                         global counter1
                         counter1 = counter1 - 1
                         player1(r)
@@ -126,15 +127,16 @@ def pepe_dame():
                         #player1(t)
 
                 elif n == 1:
+                    r = choice("\nWhere do you want to move it to? ")
 
                 
 ##                for i in range(0,4):
 ##                    for j in range(0,n):
                         
-                    if r == 1 or r == 3 or r == 5:
+                    if r == 0 or r == 2 or r == 4:
                         global counter1
                         counter1 = counter1 - 1
-                        player1(s)
+                        player1(r)
                         board[n] = n + 1
                         global counter1
                         counter1 = counter1 + 1
@@ -154,7 +156,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,n):
                 elif n == 2:
-                    if r == 2 or r == 6 or r == 5:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 1 or r == 5 or r == 4:
                         global counter1
                         counter1 = counter1 - 1
                         player1(r)
@@ -178,7 +181,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,n):
                 elif n == 3:
-                    if r == 1 or r == 7 or r == 5:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 0 or r == 6 or r == 4:
                         global counter1
                         counter1 = counter1 - 1
                         player1(r)
@@ -202,7 +206,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,n):
                 elif n == 4:
-                    if r == 1 or r == 2 or r == 3 or r == 4 or r == 6 or r == 7 or r == 8 or r == 9:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 0 or r == 1 or r == 2 or r == 3 or r == 5 or r == 6 or r == 7 or r == 8:
                         global counter1
                         counter1 = counter1 - 1
                         player1(r)
@@ -225,7 +230,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,n):
                 elif n == 5:
-                    if r == 3 or r == 5 or r == 9:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 2 or r == 4 or r == 8:
                         global counter1
                         counter1 = counter1 - 1
                         player1(r)
@@ -247,10 +253,11 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,n):
                 elif n == 6:
-                    if r == 4 or r == 5 or r == 8:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 3 or r == 4 or r == 7:
                         global counter1
                         counter1 = counter1 - 1
-                        player1(t)
+                        player1(r)
                         board[n] = n + 1
                         global counter1
                         counter1 = counter1 + 1
@@ -270,7 +277,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,n):
                 elif n == 7:
-                    if r == 7 or r == 5 or r == 9:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 6 or r == 4 or r == 8:
                         global counter1
                         counter1 = counter1 - 1
                         player1(r)
@@ -290,10 +298,9 @@ def pepe_dame():
                         #player1(t)
 
 
-##                for i in range(0,4):
-##                    for j in range(0,n):
-                elif n == 9:
-                    if r == 8 or r == 6 or r == 5:
+                elif n == 8:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 5 or r == 4 or r == 7:
                         global counter1
                         counter1 = counter1 - 1
                         player1(r)
@@ -311,7 +318,6 @@ def pepe_dame():
                         global counter1
                         counter1 = counter1 + 1
                         #player1(t)
-                
 
 ##            elif board[n] == "O" and counter:
 ##                print("\n Sorry, That position is unavailable")
@@ -341,7 +347,7 @@ def pepe_dame():
         print("Counter2 = " + str(counter2))
         end = check_board()
 
-        if  board[n] == "O" or board[n] == "X" and counter1 < 3:
+        if  board[n] == "O" or board[n] == "X" and counter2 < 3:
                 print("\n Sorry, That position is unavailable.")
                 new_choice = choice("Choose a different position with a number: ")
                 player2(new_choice)
@@ -350,7 +356,7 @@ def pepe_dame():
         elif counter2 >= 3:
             if board[n] == "O":
                 
-                r = choice("\nWhere do you want to move it to? ")
+                
 ##                player1(s)
 ##                global counter1
 ##                counter1 = counter1 - 1
@@ -358,30 +364,32 @@ def pepe_dame():
 ##                
                 
 ##Check if move is allowed
-##                for i in range(0,4):
-##                    for j in range(0,n):
+##
                 if n == 0:
-                    if r == 2 or r == 4 or r == 5:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 1 or r == 3 or r == 4:
                         global counter2
                         counter2 = counter2 - 1
                         player2(r)
                         board[n] = n + 1
-                        global counter2
-                        counter2 = counter2 + 1
+##                        global counter2
+##                        counter2 = counter2 + 1
                                 
                     else:
                         print("Cheat! How can you move all the way there?")
                         t = choice("\nMake another choice: ")
-                        global counter2
-                        counter2 = counter2 - 1
+##                        global counter2
+##                        counter2 = counter2 - 1
                         player2(t)
                         board[n] = n + 1
-                        global counter2
-                        counter2 = counter2 + 1
+##                        global counter2
+##                        counter2 = counter2 + 1
                         #player1(t)
 
                 elif n == 1:
-                    if s == 1 or s == 3 or s == 5:
+                    r = choice("\nWhere do you want to move it to? ")
+                    
+                    if r == 0 or r == 2 or r == 4:
                         global counter2
                         counter2 = counter2 - 1
                         player2(r)
@@ -405,7 +413,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,k):
                 elif n == 2:
-                    if s == 2 or s == 6 or s == 5:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 1 or r == 5 or r == 4:
                         global counter2
                         counter2 = counter2 - 1
                         player2(r)
@@ -428,7 +437,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,k):
                 elif n == 3:
-                    if s == 1 or s == 7 or s == 5:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 0 or r == 6 or r == 4:
                         global counter2
                         counter2 = counter2 - 1
                         player2(r)
@@ -451,7 +461,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,k):
                 elif n == 4:
-                    if s == 1 or s == 2 or s == 3 or s == 4 or s == 6 or s == 7 or s == 8 or s == 9:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 0 or r == 1 or r == 2 or r == 3 or r == 5 or r == 6 or r == 7 or r == 8:
                         global counter2
                         counter2 = counter2 - 1
                         player2(r)
@@ -474,7 +485,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,k):
                 elif n == 5:
-                    if s == 3 or s == 5 or s == 9:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 2 or r == 4 or r == 8:
                         global counter2
                         counter2 = counter2 - 1
                         player2(r)
@@ -498,7 +510,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,k):
                 elif n == 6:
-                    if s == 4 or s == 5 or s == 8:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 3 or r == 4 or r == 7:
                         global counter2
                         counter2 = counter2 - 1
                         player2(r)
@@ -521,7 +534,8 @@ def pepe_dame():
 ##                for i in range(0,4):
 ##                    for j in range(0,k):
                 elif n == 7:
-                    if s == 7 or s == 5 or s == 9:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 6 or r == 4 or r == 8:
                         global counter2
                         counter2 = counter2 - 1
                         player2(r)
@@ -543,8 +557,9 @@ def pepe_dame():
 ##                k = 1
 ##                for i in range(0,4):
 ##                    for j in range(0,k):
-                elif n == 9:
-                    if s == 8 or s == 6 or s == 5:
+                elif n == 8:
+                    r = choice("\nWhere do you want to move it to? ")
+                    if r == 7 or r == 5 or r == 4:
                         global counter2
                         counter2 = counter2 - 1
                         player2(r)
@@ -632,9 +647,10 @@ def pepe_dame():
                     break
                 n = choice("Player 2 make a choice: ")
                 player2(n)
-##                draw()
-##                end = check_board()
                 print()
+                draw()
+                end = check_board()
+                
 
             if input("Play again (y/n)\n") == "y":
                 print()
@@ -661,8 +677,8 @@ def pepe_dame():
                 n = choice("Computer's turn: ")
                 chooseComputerMove()
                 print()
-##                draw()
-##                end = check_board()
+                draw()
+                end = check_board()
 
             if input("Play again (y/n)\n") == "y":
                 print()
